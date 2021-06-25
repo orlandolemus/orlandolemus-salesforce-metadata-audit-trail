@@ -1,0 +1,115 @@
+<aura:component controller="SetupAuditTrailController" implements="force:appHostable,lightning:isUrlAddressable,lightning:availableForFlowScreens,
+    flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes" access="global">
+
+    <aura:attribute name="showSpinner" type="Boolean" default="true" />
+    <aura:attribute name="isReady" type="Boolean" default="false" />
+    <aura:attribute name="displayTable" type="Boolean" default="false" />
+    <aura:attribute name="totalNumberOfRows" type="Integer" default="0" />
+    <aura:attribute name="data" type="List" />
+    <aura:attribute name="searchDate" type="Date" />
+    <aura:attribute name="searchUser" type="String" />
+
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }" />
+
+    <div class="c-container">
+        <aura:if isTrue="{!v.showSpinner == true}">
+            <lightning:spinner variant="brand" alternativeText="Loading" size="small" />
+        </aura:if>
+        <lightning:layout multipleRows="false">
+
+            <lightning:layoutItem size="12">
+                <div class="page-section page-main">
+                    <aura:if isTrue="{!v.isReady}">
+                        <div class="header-container">
+                            <!-- HEADER TITLE-->
+                            <div class="slds-page-header">
+                                <div class="slds-page-header__row">
+                                    <div class="slds-page-header__col-title">
+                                        <div class="slds-media">
+                                            <div class="slds-media__body">
+                                                <div class="slds-page-header__name">
+                                                    <div class="slds-page-header__name-title">
+                                                        <h1>
+                                                            <span class="slds-page-header__title slds-truncate">Metadata Audit Trail</span>
+                                                        </h1>
+                                                        Metadata changes by user and type
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FILTERS -->
+                        <div class="slds-grid slds-wrap slds-m-around_x-small">
+                            <div class="slds-col slds-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_4-of-12 slds-p-right--small location-picker">
+                                <lightning:input type="date" name="searchDate" placeholder="Start Date" value="{!v.searchDate}" onchange="{!c.searchByDate}" />
+                            </div>
+                            <div class="slds-col slds-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_4-of-12 slds-p-right--small location-picker">
+                                <lightning:input type="text" name="searchUser" placeholder="Filter By User" value="{!v.searchUser}" onchange="{!c.searchByUser}" />
+                            </div>
+                        </div>
+
+                        <aura:if isTrue="{!v.displayTable}">
+                            <aura:if isTrue="{! v.totalNumberOfRows == 0 }">
+                                <div class="slds-text-align--center slds-m-around_x-small slds-p-horizontal--medium">
+                                    No results.
+                                </div>
+                                <aura:set attribute="else">
+                                    <div id="c-table-container" class="slds-is-relative c-table-container slds-m-around_x-small">
+                                        <div id="c-table">
+                                            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+                                                <thead>
+                                                    <tr class="slds-line-height_reset">
+                                                        <th class="" scope="col">
+                                                            <div class="slds-truncate">Section</div>
+                                                        </th>
+                                                        <th class="" scope="col">
+                                                            <div class="slds-truncate">Type</div>
+                                                        </th>
+                                                        <th class="" scope="col">
+                                                            <div class="slds-truncate">CreatedDate</div>
+                                                        </th>
+                                                        <th class="" scope="col">
+                                                            <div class="slds-truncate">CreatedBy</div>
+                                                        </th>
+                                                        <th class="" scope="col">
+                                                            <div class="slds-truncate">Action</div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <aura:iteration items="{!v.data}" var="item" indexVar="i">
+                                                        <tr class="slds-hint-parent">
+                                                            <td>
+                                                                <div class="slds-truncate">{!item.Section}</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="slds-truncate">{!item.Action}</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="slds-truncate">{!item.CreatedDate}</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="slds-truncate">{!item.CreatedById}</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="slds-truncate">{!item.Display}</div>
+                                                            </td>
+                                                        </tr>
+                                                    </aura:iteration>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </aura:if>
+                    </aura:if>
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

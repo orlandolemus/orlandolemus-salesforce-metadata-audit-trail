@@ -1,0 +1,197 @@
+.THIS {
+    width: 100%;
+    margin: 0 auto;
+    background: #FFFFFF;
+}
+
+.THIS .c-container {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+.THIS .slds-table td {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.THIS .c-table-title {
+    font-weight: bold;
+    line-height: 1.5rem;
+    padding: 4px 24px;
+    /* border-top: 1px solid #ccc; */
+    /* border-left: 1px solid #ccc; */
+    /* background-color: var(--sds-c-badge-color-background,#1589EE)!important; */
+    background-color: var(--sds-c-badge-color-background, #596D90)!important;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.THIS table.slds-table.slds-table_cell-buffer.slds-table_bordered.slds-table_col-bordered {
+    border-left: 1px solid #CCC;
+}
+
+.THIS .location-picker label {
+    display: none;
+}
+
+.THIS .instruction-title {
+    height: 25px;
+    padding-left: 10px;
+    line-height: 2;
+}
+
+.THIS .instruction-active {
+    color: #2196f3;
+    font-weight: bold;
+}
+
+.THIS .c-badge {
+    background-color: var(--sds-c-badge-color-background, var(--lwc-colorBackgroundDark, rgb(236, 235, 234)));
+    padding: 6px 5px;
+    border-width: var(--sds-c-badge-sizing-border, var(--lwc-borderWidthThin, 1px));
+    border-style: solid;
+    border-color: var(--sds-c-badge-color-border, transparent);
+    border-radius: var(--sds-c-badge-radius-border, var(--lwc-borderRadiusPill, 15rem)) !important;
+    font-size: var(--sds-c-badge-font-size, var(--lwc-fontSize2, 0.75rem));
+    line-height: 1.5rem;
+    color: var(--sds-c-badge-text-color, var(--lwc-colorTextDefault, rgb(8, 7, 7)));
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 14px;
+    font-size: 0.95rem;
+    min-height: 41px;
+}
+
+.THIS .appointment-confirmation-button button {
+    min-height: 39px;
+    border-radius: 15px;
+    font-weight: bold;
+    line-height: 1rem;
+    font-size: 0.95rem;
+    box-shadow: var(--sds-c-button-shadow-focus, var(--lwc-shadowButtonFocus, 0 0 14px #0070D2));
+}
+
+.THIS .c-badge label.slds-form-element__label {
+    display: none;
+}
+
+.THIS .c-badge .appointment-date-search {
+    padding-left: 10px;
+    display: inline-block;
+    min-width: 150px;
+}
+
+.THIS .refreshButton {
+    margin-top: 28px;
+}
+
+.THIS .refreshButton button {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.THIS .c-badge .appointment-date-search input[name="searchDate"] {
+    min-height: 27px;
+    line-height: 1rem;
+    color: #000000;
+    min-width: 40px !important;
+}
+
+.THIS .appointment-active {
+    background-color: var(--sds-c-badge-color-background, #596D90) !important;
+}
+
+.THIS .appointment-active .appointment-badge-text,
+.THIS .appointment-selected .appointment-badge-text {
+    color: var(--sds-c-badge-text-color, #FFFFFF) !important;
+    font-weight: var(--lwc-fontWeightBold, 700);
+}
+
+.THIS .appointment-selected {
+    background-color: var(--sds-c-badge-color-background, #78BF3A) !important;
+}
+
+.THIS .appointment-selected .slds-badge__icon {
+    color: var(--sds-c-badge-text-color, #FFFFFF) !important;
+}
+
+.THIS .location-select select {
+    height: 40px !important;
+    border-radius: 12px !important;
+    font-size: 0.95rem;
+}
+
+.THIS .location-select .slds-select_container:after,
+.THIS .location-select .slds-select_container:before {
+    margin-right: 9px;
+}
+
+.THIS .location-selected select {
+    background-color: var(--sds-c-badge-color-background, #78BF3A)!important;
+    color: var(--sds-c-badge-text-color, #FFFFFF)!important;
+    font-weight: bold;
+    opacity: 1;
+    border-radius: var(--sds-c-badge-radius-border, var(--lwc-borderRadiusPill, 15rem))!important;
+}
+
+.THIS .slds-hidden {
+    display: none;
+}
+
+.THIS .instruction-text {
+    color: #006dcc;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.THIS .confirmation-text {
+    font-size: 0.95rem;
+}
+
+.THIS .instruction-text span {
+    display: inline-block;
+    line-height: 1.25rem;
+}
+
+.THIS .slds-page-header {
+    padding: 10px;
+}
+
+.THIS .slds-modal {
+    border: 1px solid #CCC;
+}
+
+.THIS .slds-modal__header {
+    background-color: #f5f5f5;
+    border-top: 1px solid #DDDBDA;
+    border-left: 1px solid #DDDBDA;
+    border-right: 1px solid #DDDBDA;
+}
+
+.THIS .slds-modal__content {
+    border: 1px solid #DDDBDA;
+    border-top: none;
+}
+
+.THIS .border-t {
+    border-top: 1px solid #f1f1f1
+}
+
+.THIS .border-b {
+    border-bottom: 1px solid #f1f1f1
+}
+
+.THIS .c-table-container {
+    max-height: 480px;
+    overflow-y: auto;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+}
